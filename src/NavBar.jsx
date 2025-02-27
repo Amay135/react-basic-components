@@ -16,7 +16,8 @@ export default function NavBar() {
             <a className="nav-link" href="#">Features</a>
           </li>
           <li className="nav-item mx-3">
-            <a className="nav-link" href="#">Pricing</a>
+            <a className="nav-link" href="#">Pricing</a>git remote add origin https://github.com/username/nama-repo.git
+
           </li>
           <li className="nav-item mx-3">
             <a className="nav-link" href="#">Disabled</a>
