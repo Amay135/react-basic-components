@@ -1,4 +1,4 @@
-export default function PokemonCard({ index, name, children,}) {
+export default function PokemonCard({ index, name, children}) {
     const url = 'https://www.pokemon.com/static-assets/'
         + 'content-assets/cms2/img/pokedex/detail/'
         + `${index.padStart(3, '0')}.png`
