@@ -1,17 +1,27 @@
-export default function PokemonCard({ index, name, children}) {
-    const url = 'https://www.pokemon.com/static-assets/'
-        + 'content-assets/cms2/img/pokedex/detail/'
-        + `${index.padStart(3, '0')}.png`
+import { useState } from "react";
+export default function PokemonCard({ data }) {
+  const [detailVisible, setDetailVisible] = useState(false);
+  const url = "https://www.pokemon.com/static-assets/" + "content-assets/cms2/img/pokedex/detail/" + `${String(data.index).padStart(3, "0")}.png`;
+  
+  const showDetail = (e) => {
+    e.preventDefault();
+    setDetailVisible(true)
+}
+  const hideDetail = (e) => {
+    e.preventDefault();
+    setDetailVisible(false)
+}
 
-    const pokedexLink = `https://www.pokemon.com/us/pokedex/${name.toLowerCase()}`
-    return (
-        <div className="card mb-4" style={{width: "12rem",}}>
-            <img src={url} className="card-img-top" style={{backgroundColor :'silver'}} />
-            <div className="card-body">
-                <h5 className="card-title">Pokemon {name}</h5>
-                <p className="card-text">{children}.</p>
-                <a href={pokedexLink} className="btn btn-primary">Lihat Selengkapnya...</a>
-            </div>
-        </div>
-    )
+  return (
+    <div className="card mb-4" style={{ width: "12rem" }}>
+      <img src={url} className="card-img-top" style={{backgroundColor: "lightgray"}} alt={`Pokemon ${data.name}`} />
+      <div className="card-body">
+        <h5 className="card-title">{data.name}</h5>
+        {detailVisible && <p className="card-text">{data.description}</p>}
+        <a href="#" class="card-link" onClick={detailVisible ? hideDetail : showDetail}>
+          {detailVisible ? "Sembunyikan" : "Lihat"} Detail
+        </a>
+      </div>
+    </div>
+  );
 }
