@@ -23,13 +23,13 @@ Proyek ini dibuat untuk mempelajari dasar-dasar React menggunakan Vite sebagai b
 Clone repository:
 
 ```bash
-git clone https://github.com/Amay135/react-1.git
+git clone https://github.com/Amay135/react-basic-components.git
 ```
 
 Masuk ke folder project:
 
 ```bash
-cd react-1
+cd react-basic-components
 ```
 
 Install dependencies:
